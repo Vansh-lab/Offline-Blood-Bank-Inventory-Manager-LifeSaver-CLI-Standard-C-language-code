@@ -3,8 +3,6 @@ C, file-handling, healthcare, blood-bank, CLI, offline-app, beginner, ATS-friend
 #include <stdlib.h>
 #include <string.h>
 
-#define FILE_NAME "donors.txt"
-
 void addDonor() {
     FILE *fp = fopen(FILE_NAME, "a");
     if (!fp) {
@@ -22,7 +20,7 @@ void addDonor() {
     printf("Enter blood group (e.g., A+, O-):/n ");
     scanf("%s", bloodGroup);
 
-    printf("Enter last donation date (YYYY-MM-DD):/n ");
+    printf("Enter last donation date (YYYY-MM-DD):\n ");
     scanf("%s", date);
 
     fprintf(fp, "%s %s %s\n", name, bloodGroup, date);
@@ -53,7 +51,7 @@ void searchDonorsByGroup() {
     }
 
     char searchGroup[5];
-    printf("Enter blood group to search:/n ");
+    printf("Enter blood group to search:\n ");
     scanf("%s", searchGroup);
 
     char name[50], bloodGroup[5], date[15];
@@ -81,7 +79,7 @@ int main() {
         printf("2. View All Donors\n");
         printf("3. Search by Blood Group\n");
         printf("0. Exit\n");
-        printf("Choose an option:/n ");
+        printf("Choose an option:\n ");
         scanf("%d", &choice);
 
         switch (choice) {
